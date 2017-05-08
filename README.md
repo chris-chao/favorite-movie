@@ -9,8 +9,10 @@ Simply open up the movies.html file in any compatible web browser.
 A browser that supports HTML5 and localStorage usage. 
 
 # Built With
-HTML - Used to create the display of the website 
+HTML - Used to create the display of the website
+
 Javascript - Used to provide functionality to the website
+
 CSS - Used to stylize the webpage
 
 # Authors
