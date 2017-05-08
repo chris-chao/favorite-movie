@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Favorite Movies</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+
+    <script>
+      $(document).ready(function() {
+      });
+
+      function saveToLocalStorage(){
+        var tempTitle = document.getElementById("title").value;
+
+        if(localStorage.getItem(tempTitle) === null){ //checks if the movie title is not already in the database  
+
+            //gets and sets the values from the user form
+            var tempYear = document.getElementById("year").value;
+            var tempDirector = document.getElementById("director").value;
+            var tempPoster = document.getElementById("poster").value;
+            var key = tempTitle;
+            var values = [tempYear, tempDirector, tempPoster];
+
+            //sets values to localStorage
+            localStorage.setItem(key, JSON.stringify(values));
+
+            appendToTable(key, values)
+
+        }
+    }
+
+    function appendToTable(key, values){
+        var table = document.getElementById("localTable");
+        var row = table.insertRow(1); //inserts a new row
+
+        //inserts four empty cells 
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+
+        //sets each cell to the corresponding value
+        cell1.innerHTML = key;
+        cell2.innerHTML = values[0];
+        cell3.innerHTML = values[1];
+        cell4.innerHTML = values[2];
+
+        showLocalStorage();
+
+        
+    }
+
+    //traverses through the existing values in localStorage and adds them to the table
+    function populateExisting(){
+        for(var i =0; i < localStorage.length; i++){
+            appendToTable(localStorage.key(i), JSON.parse(localStorage.getItem(localStorage.key(i))) )
+        }
+    }
+
+    //displays localStorage values in console
+    function showLocalStorage(){
+        var i;
+        console.log("local storage");
+        console.log(localStorage.length);
+
+        for (i = 0; i < localStorage.length; i++)   {
+            console.log(localStorage.key(i) + "=[" + localStorage.getItem(localStorage.key(i)) + "]");
+        }
+    }
+
+    //clears all values in localStorage and table
+    function clearLocalStorage(){
+        $("#localTable tbody tr").remove()
+        localStorage.clear();
+        showLocalStorage();
+    }
+
+</script>
+</head>
+
+<body onload="populateExisting();">
+   <body>
+    <h1>Favorite Movies List </h1>
+
+    <div class="form">
+        <h4>Enter the information below and click submit to store it into the database.</h4>
+        Movie title:
+        <input id="title" placeholder="Enter movie title" /> 
+        Year of release:
+        <input id="year" placeholder="Enter year of release" /> 
+        Director:
+        <input id="director" placeholder="Enter director" /> 
+        Poster URL:
+        <input id="poster" placeholder="Enter poster URL" />
+
+        <input type="submit" value="Submit" onclick="saveToLocalStorage()" />
+    </div>
+
+    <div id="localStorageDiv" class="float">
+        <table id="localTable" border="1">
+            <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>Year of Release</th>
+                  <th>Director</th>
+                  <th>Poster</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr id ="tableROW">
+              </tr>
+          </tbody>
+      </table>
+      <input type="submit" value="Clear database" onclick="clearLocalStorage()" />
+
+  </div>
+
+</body>
+</body>
+</html>

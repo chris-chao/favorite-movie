@@ -1,0 +1,51 @@
+body{
+	background-color: #white;
+	font-family: Helvetica, Arial, sans-serif; 
+	font-size: 16px;
+	background-attachment: fixed;
+
+}
+
+h1{
+	text-align: center;
+}
+
+.form input[id="title"],
+.form input[id="year"]:,
+.form input[id="director"]:,
+.form input[id="poster"]:{
+	width: 100%;
+	outline: none;
+	border: none;
+	height: 25px;
+	line-height: 25px;
+	font-size: 16px;
+	padding: 0;
+}
+
+
+#localStorageDiv{
+	margin-top: 50px;
+}
+
+table {
+	color: #333; 
+	font-family: Helvetica, Arial, sans-serif; 
+	width: 640px;
+	border-collapse:collapse; 
+	border-spacing: 0;
+}
+
+td, th { 
+	border: 1px solid #CCC; height: 30px; 
+} 
+
+th {
+	background: #F3F3F3; 
+	font-weight: bold; 
+}
+
+td {
+	background: #FAFAFA; 
+	text-align: center; 
+}
