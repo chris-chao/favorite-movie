@@ -1,8 +1,8 @@
 # favorite-movie
 
-This website allows users to add and see information about their favorite movies using localStorage as the database and HTML tables to display the information. 
+This website allows users to add and see information about their favorite movies using localStorage as the database and an HTML table to display the information. 
 
-# How to Run
+# Getting Started
 Simply open up the movies.html file in any compatible web browser.
 
 # Built With
