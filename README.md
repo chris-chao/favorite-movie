@@ -6,7 +6,7 @@ This website allows users to add and see information about their favorite movies
 Option 1 (save as):
 1. Go to each file, movies.html and style.css, and click raw
 2. Once you have the source code open, "save as" with the respective extensions
-3. Then open movies.html in any compatible web browser
+3. Then go to movies.html file location and open it in any compatible web browser
 
 Option 2 (RawGit):
 1. To preview the project in the browser, just go to: https://cdn.rawgit.com/chris-chao/favorite-movies/63ada144/movies.html
