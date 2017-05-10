@@ -1,4 +1,4 @@
-# favorite-movie
+# favorite-movies
 
 This website allows users to add and see information about their favorite movies using localStorage as the database and an HTML table to display the information. 
 
